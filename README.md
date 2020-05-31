@@ -6,7 +6,8 @@ This is an AndroidStudio rebuild of google SDK sample NotePad
 ### 一.添加笔记时间戳
 
 (1). 在notelist_item.xml中添加一个TextView来显示时间
-      原xml中只有一个TextView显示标题，修改xml代码如下:
+
+     原xml中只有一个TextView显示标题，修改xml代码如下:
 ```
  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -82,7 +83,7 @@ int[] viewIDs = { android.R.id.text1 ,R.id.text2};
     </item>
 ```
 ### (2).添加一个用于显示搜索页面的布局文件
-          命名为search_list，其中包括一个SearchView显示搜索框和ListView显示笔记
+        命名为search_list，其中包括一个SearchView显示搜索框和ListView显示笔记
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -106,7 +107,7 @@ int[] viewIDs = { android.R.id.text1 ,R.id.text2};
 ```
             其中ListView的id不能设置为"@+id/"，否则导致应用闪退
 ### (3).新建一个名为NoteSearch的activit用于NoteList跳转和实现搜索效果
-            NoteSearch要继承ListView和实现SearchView.OnQueryTextListener，匹配模式为模糊匹配
+        NoteSearch要继承ListView和实现SearchView.OnQueryTextListener，匹配模式为模糊匹配
 ```
  private static final String[] PROJECTION = new String[] {
             NotePad.Notes._ID, // 0
@@ -171,7 +172,7 @@ int[] viewIDs = { android.R.id.text1 ,R.id.text2};
     }
 ```
 ### (4).在NotesList的OnOptionsItemSelected方法中添加新增的search项的点击后要执行的代码
-            显示调用intent用于跳转到NoteSearch
+        显示调用intent用于跳转到NoteSearch
 ```
 case R.id.menu_search:
                 Intent intent=new Intent();
@@ -180,5 +181,9 @@ case R.id.menu_search:
                 return true;
 ```
 ### (5).运行效果
-![效果2]()
+点击菜单的搜索
+![效果2](app/src/main/res/screenshoots/2.png)
+
+点击搜索框
+![效果3](app/src/main/res/screenshoots/3.png)
 
